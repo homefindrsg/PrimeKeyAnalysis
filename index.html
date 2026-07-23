@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeKey Analysis | Data-Driven Singapore Property Investment Framework</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            gold: '#f59e0b',
+                            goldHover: '#d97706',
+                            darkBg: '#090D16',
+                            cardBg: '#111827',
+                            cardBorder: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080B11;
+            color: #F3F4F6;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(245, 158, 11, 0.15);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 45%, #EA580C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+            transform: scale(1.02);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080B11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-100 bg-[#080B11] selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-card border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-600 flex items-center justify-center text-gray-950 font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                    PK
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight block leading-none gradient-text">PRIMEKEY ANALYSIS</span>
+                    <span class="text-[10px] tracking-widest font-semibold uppercase block mt-1 gradient-text">A Data-Driven Investment Framework</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-amber-400 transition-colors">Overview</a>
+                <a href="#features" class="hover:text-amber-400 transition-colors">Key Features</a>
+                <a href="#factors" class="hover:text-amber-400 transition-colors">8 Core Factors</a>
+                <a href="#workflow" class="hover:text-amber-400 transition-colors">Evaluation Workflow</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-card border-b border-gray-800 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-gray-300 hover:text-amber-400 py-1">Overview</a>
+            <a href="#features" class="block text-gray-300 hover:text-amber-400 py-1">Key Features</a>
+            <a href="#factors" class="block text-gray-300 hover:text-amber-400 py-1">8 Core Factors</a>
+            <a href="#workflow" class="block text-gray-300 hover:text-amber-400 py-1">Workflow</a>
+            <a href="https://sghomeinvestment.com/contact/" target="_blank" class="block text-center mt-3 py-2.5 bg-amber-500 text-gray-950 font-bold rounded-lg">Request Report</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Background Blur Spheres -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span>Singapore Private Residential Intelligence</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    <span class="gradient-text">Remove Speculation From <br class="hidden sm:block"/>
+                    Property Investment.</span>
+                </h1>
+
+                <!-- Header Image placed directly after headline -->
+                <div class="relative rounded-2xl overflow-hidden glass-card p-3 shadow-2xl border border-gray-700/60 max-w-4xl mx-auto my-6">
+                    <img src="https://lh3.googleusercontent.com/d/1p012j29tN-5QfK4jT6iNoeEIINNDS9MF" 
+                         alt="Singapore Modern Luxury Condominium Architecture" 
+                         class="rounded-xl w-full h-[320px] sm:h-[420px] object-cover filter brightness-90 contrast-105"
+                         onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent rounded-xl pointer-events-none"></div>
+                </div>
+
+                <p class="text-lg text-gray-300 max-w-2xl leading-relaxed mx-auto">
+                    <a href="https://sghomeinvestment.com/primekey-analysis-a-data-driven-property-investment-framework/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="text-amber-400 font-bold hover:underline">PrimeKey Analysis</a> is a data-driven property investment framework engineered to evaluate private residential developments (new launches, resale condos, and ECs) with empirical precision, objectivity, and strategic clarity.
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#factors" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-gray-950 font-bold text-base shadow-xl shadow-orange-500/20 transition-all hover:scale-105 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-layer-group text-lg"></i>
+                        <span>Explore 8 Core Factors</span>
+                    </a>
+                    <a href="https://sghomeinvestment.com/contact/" target="_blank" rel="noopener noreferrer" 
+                       class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-gray-800 text-amber-400 font-bold text-base border border-amber-500/40 transition-all hover:border-amber-400 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span>Get Custom Report</span>
+                    </a>
+                </div>
+
+                <!-- Trust Stats -->
+                <div class="pt-8 grid grid-cols-3 gap-4 border-t border-gray-800/80 max-w-lg mx-auto">
+                    <div>
+                        <div class="text-2xl font-bold text-white">8 Factors</div>
+                        <div class="text-xs text-gray-400 mt-1">Quantitative Metrics</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-orange-400">0% Emotion</div>
+                        <div class="text-xs text-gray-400 mt-1">Pure Objective Data</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-amber-400">Exit Defined</div>
+                        <div class="text-xs text-gray-400 mt-1">Prior to Entry</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-950/60 border-y border-gray-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <h2 class="text-xs font-bold text-amber-400 uppercase tracking-widest flex items-center justify-center space-x-1.5">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Beyond Showflat Hype &amp; PSF</span>
+                </h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-circle-question text-amber-400"></i>
+                    <span>What is PrimeKey Analysis About?</span>
+                </h3>
+                <p class="text-gray-300 leading-relaxed text-base">
+                    Buying a private property in Singapore is rarely just about finding the lowest Price-Per-Square-Foot (PSF) or being enchanted by a lavish sales gallery. A low PSF can still carry severe lease decay, weak upgrader demand, or high vacancy risks.
+                </p>
+                <p class="text-gray-300 leading-relaxed text-base">
+                    PrimeKey Analysis will help to surface the strengths and weaknesses of each projects.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Box 1 -->
+                <div class="p-8 rounded-2xl glass-card glass-card-hover space-y-4">
+                    <h4 class="text-xl font-bold text-white flex items-center space-x-3">
+                        <span class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-lg font-bold border border-orange-500/20 shrink-0">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </span>
+                        <span>Objective Scoring</span>
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Translates multi-layered urban planning data into transparent, standardized investment scores that remain completely unswayed by marketing hype.
+                    </p>
+                </div>
+
+                <!-- Box 2 -->
+                <div class="p-8 rounded-2xl glass-card glass-card-hover space-y-4">
+                    <h4 class="text-xl font-bold text-white flex items-center space-x-3">
+                        <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg font-bold border border-amber-500/20 shrink-0">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </span>
+                        <span>Forward-Looking View</span>
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Instead of looking solely at historical transactions, PrimeKey evaluates future catalyst drivers: URA Masterplan transformations, GLS pipelines, and demographic cycles.
+                    </p>
+                </div>
+
+                <!-- Box 3 -->
+                <div class="p-8 rounded-2xl glass-card glass-card-hover space-y-4">
+                    <h4 class="text-xl font-bold text-white flex items-center space-x-3">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg font-bold border border-cyan-500/20 shrink-0">
+                            <i class="fa-solid fa-door-open"></i>
+                        </span>
+                        <span>Pre-Planned Exit</span>
+                    </h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Maps out your potential secondary buyers (such as local HDB upgraders or school-seeking families) long before you make your financial commitment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center space-x-1.5">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Framework Advantages</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-list-check text-amber-400"></i>
+                    <span>Key Features of PrimeKey Analysis</span>
+                </h2>
+                <p class="text-gray-400 text-sm">Designed specifically for Singapore's dynamic private housing landscape.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl glass-card border border-gray-800 space-y-3 hover:border-amber-500/30 transition-all">
+                    <div class="flex items-center space-x-3 text-orange-400">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                        <h3 class="text-lg font-bold text-white">Standardized Objective Scoring</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Eliminates emotional bias and sales pitches by evaluating every development against a fixed set of quantitative indicators.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl glass-card border border-gray-800 space-y-3 hover:border-amber-500/30 transition-all">
+                    <div class="flex items-center space-x-3 text-amber-400">
+                        <i class="fa-solid fa-binoculars text-xl"></i>
+                        <h3 class="text-lg font-bold text-white">Forward-Looking Market Intelligence</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        While traditional evaluations focus on past transaction prices, PrimeKey evaluates future growth drivers - such as upcoming government land sales and URA master plans.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl glass-card border border-gray-800 space-y-3 hover:border-amber-500/30 transition-all">
+                    <div class="flex items-center space-x-3 text-cyan-400">
+                        <i class="fa-solid fa-code-compare text-xl"></i>
+                        <h3 class="text-lg font-bold text-white">Side-by-Side Project Comparison</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Provides a consistent benchmark score, allowing you to directly compare different projects (e.g., a new launch vs. a 5-year-old resale condo) on equal terms.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-6 rounded-2xl glass-card border border-gray-800 space-y-3 hover:border-amber-500/30 transition-all">
+                    <div class="flex items-center space-x-3 text-red-400">
+                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                        <h3 class="text-lg font-bold text-white">Risk Exposure Before Buying</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Highlights hidden red flags—such as severe lease decay, poor public transport access, or a thin pool of future buyers—before financial commitment.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="p-6 rounded-2xl glass-card border border-gray-800 space-y-3 hover:border-amber-500/30 transition-all">
+                    <div class="flex items-center space-x-3 text-purple-400">
+                        <i class="fa-solid fa-route text-xl"></i>
+                        <h3 class="text-lg font-bold text-white">Defined Exit Strategy</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Assesses who your eventual buyers will be <em>before</em> you enter, ensuring you don't get trapped in an illiquid asset.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="p-6 rounded-2xl glass-card border border-gray-800 space-y-3 hover:border-amber-500/30 transition-all">
+                    <div class="flex items-center space-x-3 text-amber-400">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                        <h3 class="text-lg font-bold text-white">Holding Strength Optimization</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Evaluates rental yields and liquidity indicators to ensure the property offers defensive holding resilience during market volatility.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 8 Factors Section -->
+    <section id="factors" class="py-24 bg-gray-950/80 border-t border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center space-x-1.5">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>The Core Methodology</span>
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-layer-group text-amber-400"></i>
+                    <span>The 8 Factors Used to Evaluate Investment Potential</span>
+                </h2>
+                <p class="text-gray-300 text-base">
+                    PrimeKey Analysis evaluates residential projects across eight empirically validated factors proven to influence capital growth, rental yield, and resale liquidity.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Factor 1 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-orange-500/10 text-orange-400 flex items-center justify-center font-bold mb-4">01</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-train-subway text-orange-400 mr-2"></i> Distance to MRT</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Measures walkability to mass transit (&lt; 5 mins being optimal). Directly impacts daily convenience, rental vacancy rates, and price resilience.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-orange-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-chart-line mr-1.5"></i>
+                        <span>Impact: High Rental &amp; Resale Liquidity</span>
+                    </div>
+                </div>
+
+                <!-- Factor 2 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4">02</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-map-location-dot text-amber-400 mr-2"></i> URA Growth Hotspots</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Assesses proximity to major urban transformation zones (e.g., Jurong Lake District, Lentor). Drives infrastructure-led appreciation.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-amber-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-arrow-trend-up mr-1.5"></i>
+                        <span>Impact: Long-Term Capital Growth</span>
+                    </div>
+                </div>
+
+                <!-- Factor 3 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold mb-4">03</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-building-flag text-cyan-400 mr-2"></i> GLS Pipeline</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Tracks nearby government land sales. Higher land costs at new land tenders create fresh pricing benchmarks that elevate existing project values.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-cyan-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-anchor mr-1.5"></i>
+                        <span>Impact: Price Benchmark Support</span>
+                    </div>
+                </div>
+
+                <!-- Factor 4 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold mb-4">04</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-city text-purple-400 mr-2"></i> Development Size</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Evaluates unit count (400+ units optimal). Scale provides extensive facilities, lower maintenance fees, and transaction volume that anchors bank valuations.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-purple-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-arrows-to-eye mr-1.5"></i>
+                        <span>Impact: Liquidity &amp; Valuation Support</span>
+                    </div>
+                </div>
+
+                <!-- Factor 5 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center font-bold mb-4">05</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-hourglass-half text-red-400 mr-2"></i> Remaining Lease Tenure</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Monitors remaining lease runway on 99-year leaseholds. Avoids steep depreciation curves (Bala's Curve) and CPF financing restrictions.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-red-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-shield-halved mr-1.5"></i>
+                        <span>Impact: Capital Protection &amp; Financing</span>
+                    </div>
+                </div>
+
+                <!-- Factor 6 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4">06</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-coins text-amber-400 mr-2"></i> Rental Yield &amp; Demand</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Analyzes localized rental yields and tenant demand. Strong rental yields provide holding power and defensive cashflow during downturns.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-amber-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-sack-dollar mr-1.5"></i>
+                        <span>Impact: Cashflow &amp; Holding Resilience</span>
+                    </div>
+                </div>
+
+                <!-- Factor 7 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4">07</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-school text-amber-400 mr-2"></i> Proximity to Primary Schools</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Evaluates distance to sought-after primary schools (&lt; 1km). Priority admission rules trigger perpetual family buyer/tenant demand.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-amber-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-users mr-1.5"></i>
+                        <span>Impact: Family Buyer Pool Defense</span>
+                    </div>
+                </div>
+
+                <!-- Factor 8 -->
+                <div class="p-6 rounded-2xl glass-card glass-card-hover border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold mb-4">08</div>
+                        <h3 class="text-lg font-bold text-white mb-2"><i class="fa-solid fa-people-roof text-cyan-400 mr-2"></i> HDB MOP Upgrader Pool</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Evaluates surrounding public flats reaching 5-year Minimum Occupation Period. A large MOP cluster provides a captive local buyer pool.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800/80 text-[11px] text-cyan-400 font-semibold flex items-center">
+                        <i class="fa-solid fa-user-check mr-1.5"></i>
+                        <span>Impact: Guaranteed Secondary Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How PrimeKey Evaluates Properties (Workflow) -->
+    <section id="workflow" class="py-24 bg-gray-950/70 border-t border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest inline-flex items-center space-x-1.5">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <span>Structured Methodology</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-diagram-project text-amber-400"></i>
+                    <span>How PrimeKey Evaluates Properties</span>
+                </h2>
+                <p class="text-gray-300 text-sm">The 3-step evaluation workflow ensuring safety and clarity at every phase.</p>
+            </div>
+
+            <!-- Workflow Steps Diagram -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="p-8 rounded-2xl glass-card border border-gray-800 relative space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/30 flex items-center justify-center text-xl font-extrabold">
+                        01
+                    </div>
+                    <h3 class="text-xl font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-bullseye text-orange-400"></i>
+                        <span>Align Objective</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Clarify the primary goal of the purchase—whether it is own-stay comfort, aggressive capital growth, high rental yield, or multi-stage wealth progression.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-8 rounded-2xl glass-card border border-gray-800 relative space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl font-extrabold">
+                        02
+                    </div>
+                    <h3 class="text-xl font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-calculator text-amber-400"></i>
+                        <span>Score Real Options</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Shortlisted developments and comparable nearby alternatives are run through the 8-factor scoring system to surface hidden risks, strengths, and comparative benchmark scores.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="p-8 rounded-2xl glass-card border border-amber-500/40 relative space-y-4 bg-amber-950/10">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-gray-950 flex items-center justify-center text-xl font-extrabold shadow-lg shadow-amber-500/20">
+                        03
+                    </div>
+                    <h3 class="text-xl font-bold text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-map-location-dot text-amber-400"></i>
+                        <span>Map Entry &amp; Exit Strategy</span>
+                    </h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Identify safe entry points with strong investment prospects and define the exact future buyer pool (e.g., HDB upgraders, school-seeking families, tenants) to ensure a smooth exit in the future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="p-10 md:p-16 rounded-3xl glass-card border border-amber-500/40 text-center relative overflow-hidden shadow-2xl bg-gradient-to-b from-gray-900 via-gray-900 to-gray-950">
+                <!-- Background Accent Glow -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500"></div>
+                <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-2xl mx-auto space-y-6 relative z-10">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-paper-plane mr-1.5"></i>Take The Next Step
+                    </span>
+
+                    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-chart-line text-amber-400"></i>
+                        <span>Ready To Make A Data-Backed Property Choice?</span>
+                    </h2>
+
+                    <p class="text-gray-300 text-base leading-relaxed">
+                        Get a customized, institutional-grade PrimeKey Analysis breakdown tailored specifically to your shortlisted residential projects.
+                    </p>
+
+                    <div class="pt-6">
+                        <!-- MANDATORY SPECIFIED CTA BUTTON -->
+                        <a href="https://sghomeinvestment.com/contact/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="inline-block w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-gray-950 font-black text-base uppercase tracking-wider btn-glow transition-all hover:scale-105 shadow-2xl">
+                           <i class="fa-solid fa-file-signature mr-2"></i>Request your Complimentary PrimeKey Analysis Report
+                        </a>
+                    </div>
+
+                    <p class="text-xs text-gray-500 mt-4">
+                        100% Complimentary &bull; No Obligation &bull; Evidence-Based Property Intelligence
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800/80 bg-gray-950 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-6 h-6 rounded bg-amber-500 text-gray-950 font-bold flex items-center justify-center text-xs">PK</div>
+                <span class="text-gray-300 font-bold">PrimeKey Analysis Framework</span>
+            </div>
+            <p>&copy; 2026 PrimeKey Analysis. All rights reserved.</p>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="https://sghomeinvestment.com/contact/" target="_blank" class="hover:text-amber-400 transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
